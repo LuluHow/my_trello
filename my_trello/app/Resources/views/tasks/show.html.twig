@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tasks</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ task.id }}</td>
+            </tr>
+            <tr>
+                <th>Project</th>
+                <td>{{ task.project }}</td>
+            </tr>
+            <tr>
+                <th>Owner</th>
+                <td>{{ task.owner }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ task.name }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ task.content }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ task.category }}</td>
+            </tr>
+            <tr>
+                <th>Subtasks</th>
+                <td>{{ task.subTasks }}</td>
+            </tr>
+            <tr>
+                <th>Orderr</th>
+                <td>{{ task.orderr }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ task.color }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tasks_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tasks_edit', { 'id': task.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

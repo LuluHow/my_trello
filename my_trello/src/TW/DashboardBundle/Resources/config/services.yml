@@ -1,0 +1,4 @@
+services:
+#    tw_dashboard.example:
+#        class: TW\DashboardBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
